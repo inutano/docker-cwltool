@@ -1,5 +1,7 @@
 FROM alpine:3.10
 RUN apk add --update --no-cache \
+    libltdl \
+    libc6-compat \
     docker \
     python3-dev && \
     python3 -m ensurepip && \
