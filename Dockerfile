@@ -10,5 +10,5 @@ RUN apk add --update --no-cache \
     zlib-dev \
     linux-headers \
   && pip install --upgrade pip \
-  && pip install cwltool==1.0.20180820141117 \
+  && pip install cwltool==1.0.20191022103248 \
   && apk del build-dep
