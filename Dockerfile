@@ -1,8 +1,11 @@
 FROM alpine:3.8
 RUN apk add --update --no-cache \
-    python-dev \
-    py-pip \
-    docker \
+    docker && \
+    python3-dev && \
+    python3 -m ensurepip && \
+    rm -r /usr/lib/python*/ensurepip && \
+    pip3 install --no-cache --upgrade pip setuptools wheel && \
+    if [ ! -e /usr/bin/pip ]; then ln -s pip3 /usr/bin/pip ; fi && \
   && apk add --update --virtual build-dep \
     build-base \
     libxml2-dev \
